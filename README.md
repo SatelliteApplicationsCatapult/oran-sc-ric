@@ -148,7 +148,12 @@ root@python_xapp_runner:/opt/xApps# ./simple_mon_xapp.py --metrics=DRB.UEThpDl,D
 docker compose exec python_xapp_runner ./kpm_mon_xapp.py --kpm_report_style=5
 ```
 
-**Note 4:** To start an example **E2SM_RC** [simple_rc_xapp](xApps/python/simple_rc_xapp.py) xApp, which sends a RIC Control Request for the Slice Level PRB Quota change (Control Style 2, Action ID 6), please run the following command from the `oran-sc-ric` directory (use CTRL+C to exit):
+**Note 4:** To start the advanced [kpm_mon_xapp_csv](xApps/python/kpm_mon_xapp_csv.py) xApp, which allows subscribing with all E2SM-KPM Report Styles (i.e., 1-5), and saves the reports to a CSV file, please run the following command from the `oran-sc-ric` directory:
+```bash
+docker compose exec python_xapp_runner ./kpm_mon_xapp_csv.py --kpm_report_style=5 --metrics=DRB.UEThpDl,DRB.UEThpUl --output_csv=csv_data_path
+```
+
+**Note 5:** To start an example **E2SM_RC** [simple_rc_xapp](xApps/python/simple_rc_xapp.py) xApp, which sends a RIC Control Request for the Slice Level PRB Quota change (Control Style 2, Action ID 6), please run the following command from the `oran-sc-ric` directory (use CTRL+C to exit):
 ```bash
 docker compose exec python_xapp_runner ./simple_rc_xapp.py
 ```
